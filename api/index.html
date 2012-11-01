@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+        <meta name="viewport" content="width=device-width" />
+        <title>YATT API reference</title>
+        <link rel="stylesheet" href="api.css" type="text/css"/>
+    </head>
+    <body>
+        <div id="sidebar">
+            <a href="#assert" class="toc_title"> assert </a>
+            <ul class="toc_section">
+                <li><a href="#assert_ok"> ok </a></li>
+                <li><a href="#assert_equal"> equal </a></li>
+                <li><a href="#assert_notEqual"> notEqual </a></li>
+                <li><a href="#assert_strictEqual"> strictEqual </a></li>
+                <li><a href="#assert_notStrictEqual"> notStrictEqual </a></li>
+                <li><a href="#assert_deepEqual"> deepEqual </a></li>
+                <li><a href="#assert_notDeepEqual"> notDeepEqual </a></li>
+                <li><a href="#assert_throws"> throws </a></li>
+                <li><a href="#assert_doesNotThrow"> doesNotThrow </a></li>
+            </ul>
+
+            <a href="#yatt" class="toc_title"> yatt </a>
+            <ul class="toc_section">
+                <li><a href="#yatt_wait"> wait </a></li>
+                <li><a href="#yatt_pass"> pass </a></li>
+                <li><a href="#yatt_fail"> fail </a></li>
+                <li><a href="#yatt_logMsg"> logMsg </a></li>
+                <li><a href="#yatt_test"> test </a></li>
+                <li><a href="#yatt_startTests"> startTests </a></li>
+            </ul>
+
+            <h3> Mocks </h3>
+
+            <a href="#io" class="toc_title"> socket.io </a>
+            <ul class="toc_section">
+                <li><a href="#io_connect"> connect </a></li>
+                <li>
+                    <a href="#io_socket" class="toc_title"> socket </a>
+                    <ul class="toc_section">
+                        <li><a href="#io_socket_on"> on </a></li>
+                        <li><a href="#io_socket_emit"> emit </a></li>
+                        <li><a href="#io_socket_getServer"> getServer </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#io_server" class="toc_title"> server </a>
+                    <ul class="toc_section">
+                    	<li><a href="#io_server_on"> on </a></li>
+                    	<li><a href="#io_server_once"> once </a></li>
+                    	<li><a href="#io_server_emit"> emit </a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
+        <div id="content">
+            <p>
+                A JavaScript Functional Testing framework.<br/>
+                Licensed under the MIT license.<br/>
+                Use code from https://github.com/joyent/node/blob/master/lib/assert.js<br/>
+                <span class="author">Author: Sergey Tsapenko &lt;4031651@gmail.com&gt;</span><br/>
+                <span class="version">Version: 0.1</span><br/>
+            </p>
+
+            <a name="assert"><!-- --></a>
+            <h2> assert </h2>
+
+            <section>
+                <a name="assert_ok"><!-- --></a>
+                <div class="synopsis">
+                    <b>ok</b><code>assert.ok(value, message)</code>
+                </div>
+                <div class="description">
+                Test that expr is true (not enpty).
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">value</td><td class="p-type">Mixed</td><td class="p-text">Tested value</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_equal"><!-- --></a>
+                <div class="synopsis">
+                    <b>equal</b><code>assert.equal(actual, expected, message)</code>
+                </div>
+                <div class="description">
+                    Test that actual and expected are equal.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_notEqual"><!-- --></a>
+                <div class="synopsis">
+                    <b>notEqual</b><code>assert.notEqual(actual, expected, message)</code>
+                </div>
+                <div class="description">
+                    Test that actual and expected are not equal.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_strictEqual"><!-- --></a>
+                <div class="synopsis">
+                    <b>strictEqual</b><code>assert.strictEqual(actual, expected, message)</code>
+                </div>
+                <div class="description">
+                    Test that actual and expected are identically (equal by the type and by the value).
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_notStrictEqual"><!-- --></a>
+                <div class="synopsis">
+                    <b>notStrictEqual</b><code>assert.notStrictEqual(actual, expected, message)</code>
+                </div>
+                <div class="description">
+                    Test that actual and expected are not identically (not equal by the type or by the value).
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_deepEqual"><!-- --></a>
+                <div class="synopsis">
+                    <b>deepEqual</b><code>assert.deepEqual(actual, expected, message)</code>
+                </div>
+                <div class="description">
+                    Test that actual and expected are equal (recursive check).
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_notDeepEqual"><!-- --></a>
+                <div class="synopsis">
+                    <b>notDeepEqual</b><code>assert.notDeepEqual(actual, expected, message)</code>
+                </div>
+                <div class="description">
+                    Test that actual and expected are not equal (recursive check).
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_throws"><!-- --></a>
+                <div class="synopsis">
+                    <b>throws</b><code>assert.throws(block, [error], [message])</code>
+                </div>
+                <div class="description">
+                    Test that an exception is raised when block is called.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">block</td><td class="p-type">Function</td><td class="p-text">Tested code</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">error</td><td class="p-type">Exception</td><td class="p-text">Optional argument. Exception type</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Optional argument. Exception message</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="assert_doesNotThrow"><!-- --></a>
+                <div class="synopsis">
+                    <b>doesNotThrow</b><code>assert.doesNotThrow(block, [error], [message])</code>
+                </div>
+                <div class="description">
+                    Test that an exception is not raised when block is called.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">block</td><td class="p-type">Function</td><td class="p-text">Tested code</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">error</td><td class="p-type">Exception</td><td class="p-text">Optional argument. Exception type</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Optional argument. Exception message</td>
+                	</tr>
+                </table>
+            </section>
+
+            <a name="yatt"><!-- --></a>
+            <h2> yatt </h2>
+
+            <section>
+                <a name="yatt_wait"><!-- --></a>
+                <div class="synopsis">
+                    <b>wait</b><code>yatt.wait(time, fn)</code>
+                </div>
+                <div class="description">
+                    Wrapper function around window.setTimeout. Reserved for future use.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">time</td><td class="p-type">Number</td><td class="p-text">Time to wait in milliseconds</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_pass"><!-- --></a>
+                <div class="synopsis">
+                    <b>pass</b><code>yatt.pass()</code>
+                </div>
+                <div class="description">
+                    Call this function to indicate that the test case has been passed.
+                </div>
+            </section>
+
+            <section>
+                <a name="yatt_fail"><!-- --></a>
+                <div class="synopsis">
+                    <b>fail</b><code>yatt.fail(message)</code>
+                </div>
+                <div class="description">
+                    Call this function to indicate that the test case has been failed.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Error message</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logMsg"><!-- --></a>
+                <div class="synopsis">
+                    <b>logMsg</b><code>yatt.logMsg(msg)</code>
+                </div>
+                <div class="description">
+                    Print message to a test results.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">msg</td><td class="p-type">String</td><td class="p-text">Error message</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_test"><!-- --></a>
+                <div class="synopsis">
+                    <b>test</b><code>yatt.test(name, fn)</code>
+                </div>
+                <div class="description">
+                    Add test suite to the tests.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of test</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Test suite</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_startTests"><!-- --></a>
+                <div class="synopsis">
+                    <b>startTests</b><code>yatt.startTests()</code>
+                </div>
+                <div class="description">
+                    Start all tests.
+                </div>
+            </section>
+
+            <h2> Mocks </h2>
+
+            <a name="io"><!-- --></a>
+            <h3> socket.io </h3>
+            
+            <p>
+                Socket.io Mock<br/>
+                Licensed under the MIT license.<br/>
+                <span class="author">Author: Sergey Tsapenko &lt;4031651@gmail.com&gt;</span><br/>
+                <span class="version">Version: 0.1</span><br/>
+            </p>
+            
+            <section>
+                <a name="io_connect"><!-- --></a>
+                <div class="synopsis">
+                    <b>connect</b><code>io.connect([url])</code>
+                </div>
+                <div class="description">
+                    Connect to the hosts.<br />
+                    Url can be an empty string. Used just for compatibility with Socket.io connect()
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">url</td><td class="p-type">String</td><td class="p-text">String that describe the URL.
+                		    Any string. In fact this string no used. Just for compatibility with Socket.io connect()</td>
+                	</tr>
+                </table>
+                Return<br/>
+                <span class="p-type">Socket</span>
+                <span class="p-text">Socket.io Socket object</span>
+            </section>
+            
+            <a name="io_socket"><!-- --></a>
+            <h4> socket </h4>
+
+            <section>
+                <a name="io_socket_on"><!-- --></a>
+                <div class="synopsis">
+                    <b>on</b><code>Socket.on(name, fn)</code>
+                </div>
+                <div class="description">
+                    Adds a listener.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Called when event was triggered</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="io_socket_emit"><!-- --></a>
+                <div class="synopsis">
+                    <b>emit</b><code>Socket.emit(name[, data[, data[, ...]]])</code>
+                </div>
+                <div class="description">
+                    Emits an event.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">data</td><td class="p-type">Mixed</td><td class="p-text">Event data</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="io_socket_getServer"><!-- --></a>
+                <div class="synopsis">
+                    <b>getServer</b><code>Socket.getServer()</code>
+                </div>
+                <div class="description">
+                    Get socket server.
+                </div>
+                Return<br/>
+                <span class="p-type">Server</span>
+                <span class="p-text">Socket server object</span>
+            </section>
+
+            <a name="io_server"><!-- --></a>
+            <h4> server </h4>
+
+            <section>
+                <a name="io_server_on"><!-- --></a>
+                <div class="synopsis">
+                    <b>on</b><code>Server.on(name, fn)</code>
+                </div>
+                <div class="description">
+                    Adds a listener.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Called when event was triggered</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="io_server_once"><!-- --></a>
+                <div class="synopsis">
+                    <b>once</b><code>Server.once(name, fn)</code>
+                </div>
+                <div class="description">
+                    Adds a volatile listener.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Called when event was triggered</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="io_server_emit"><!-- --></a>
+                <div class="synopsis">
+                    <b>emit</b><code>Server.emit(name[, data[, data[, ...]]])</code>
+                </div>
+                <div class="description">
+                    Emits an event.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">data</td><td class="p-type">Mixed</td><td class="p-text">Event data</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </body>
+</html>

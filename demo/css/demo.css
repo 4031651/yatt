@@ -1,0 +1,42 @@
+body {
+	color: #333;
+	padding-top: 25px;
+}
+
+.pic {
+    position: relative;
+}
+
+#name, #rank, #pictext {
+    font-weight: bold;
+}
+
+#pictext {
+    color: #00f;
+    font-family: sans-serif;
+    font-size: 25px;
+    left: 16px;
+    position: absolute;
+    top: 85px;
+}
+
+#user-info {
+    float: right;
+    text-align: center;
+    width: 150px;
+}
+
+#users {
+    margin-right: 160px;
+}
+
+#users li {
+    border: 3px double #999;
+    display: inline-block;
+    margin: 2px 0;
+    width: 49%;
+}
+
+#users li .pic {
+    float: left;
+} 

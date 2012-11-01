@@ -1,0 +1,3 @@
+[submodule "lib/eemul"]
+	path = lib/eemul
+	url = git@github.com:4031651/eemul.git

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Tests</title>
+        <style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+}
+#test_results {
+    background-color: #f5deb3;
+    border: 1px solid #999;
+    overflow-y: scroll;
+}
+#test_results h1 {
+    text-align: center;
+    margin: .5em;
+}
+#test_results .msg {
+    padding-left: 1em;
+}
+        </style>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript">
+function fitTopage() {
+    jQuery('#test_results').height(jQuery(window).height());
+};
+jQuery(function () {
+    fitTopage();
+    jQuery(window).resize(fitTopage);
+});
+        </script>
+    </head>
+    <body>
+        <div id="test_results">
+            <h1>Tests results</h1>
+            <div id="test_log"></div>
+        </div>
+    </body>
+</html>
