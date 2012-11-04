@@ -29,6 +29,7 @@
                 <li><a href="#yatt_fail"> fail </a></li>
                 <li><a href="#yatt_logMsg"> logMsg </a></li>
                 <li><a href="#yatt_test"> test </a></li>
+                <li><a href="#yatt_suite"> suite </a></li>
                 <li><a href="#yatt_startTests"> startTests </a></li>
             </ul>
 
@@ -333,7 +334,7 @@
                     <b>test</b><code>yatt.test(name, fn)</code>
                 </div>
                 <div class="description">
-                    Add test suite to the tests.
+                    Add test.
                 </div>
                 Parameters
                 <table class="params">
@@ -344,6 +345,28 @@
                 		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Test suite</td>
                 	</tr>
                 </table>
+                Return<br/>
+                <span class="p-type">yatt</span>
+                <span class="p-text">YATT object</span>
+            </section>
+
+            <section>
+                <a name="yatt_suite"><!-- --></a>
+                <div class="synopsis">
+                    <b>suite</b><code>yatt.suite(suiteName)</code>
+                </div>
+                <div class="description">
+                    Add tests suite.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">suiteName</td><td class="p-type">String</td><td class="p-text">Name of suite</td>
+                	</tr>
+                </table>
+                Return<br/>
+                <span class="p-type">suite</span>
+                <span class="p-text">Suite object. This object has one method test()</span>
             </section>
 
             <section>

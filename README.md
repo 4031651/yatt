@@ -1,6 +1,7 @@
 YATT - Yet another testing tool.
 ===================
 YATT is a powerful, easy-to-use JavaScript functional festing framework.
+version 0.2
 
 ###Usage
 To use yatt you should create a test page. This page is not very different from the page of your application.
@@ -15,11 +16,11 @@ a script which contains your test. Done!
 ###Features
 + Assertions statements
 + Asynchronous tests
++ Suites of a tests
 + Mock for socket.io (partial implementation)
 + emulation of user interaction (eemul)
 
 ###Future releases
-+ Add a test suites
 + Add alert/confirm/prompt interaction
 + Refactor the loger
 + Full implementation of the socket.io mock
