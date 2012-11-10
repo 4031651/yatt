@@ -30,6 +30,9 @@
                 <li><a href="#yatt_logMsg"> logMsg </a></li>
                 <li><a href="#yatt_test"> test </a></li>
                 <li><a href="#yatt_suite"> suite </a></li>
+                <li><a href="#yatt_alert"> alert </a></li>
+                <li><a href="#yatt_confirm"> confirm </a></li>
+                <li><a href="#yatt_prompt"> prompt </a></li>
                 <li><a href="#yatt_startTests"> startTests </a></li>
             </ul>
 
@@ -367,6 +370,69 @@
                 Return<br/>
                 <span class="p-type">suite</span>
                 <span class="p-text">Suite object. This object has one method test()</span>
+            </section>
+
+            <section>
+                <a name="yatt_alert"><!-- --></a>
+                <div class="synopsis">
+                    <b>alert</b><code>yatt.alert(fn)</code>
+                </div>
+                <div class="description">
+                    Wait for alert.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function.
+                		    Will be triggered when the window.alert() function was called.
+                		    Receive the text of window.alert() as a parameter.
+                		</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_confirm"><!-- --></a>
+                <div class="synopsis">
+                    <b>confirm</b><code>yatt.confirm(result, fn)</code>
+                </div>
+                <div class="description">
+                    Wait for confirm.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">result</td><td class="p-type">Boolean</td><td class="p-text">Result of confirm</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Optional parameter.
+                		    Will be triggered when the window.confirm() function was called.
+                		    Receive the text of window.confirm() as a parameter.
+                		</td>
+                	</tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_prompt"><!-- --></a>
+                <div class="synopsis">
+                    <b>prompt</b><code>yatt.prompt(result, fn)</code>
+                </div>
+                <div class="description">
+                    Wait for confirm.
+                </div>
+                Parameters
+                <table class="params">
+                	<tr>
+                		<td class="p-name">result</td><td class="p-type">Mixed</td><td class="p-text">Result of prompt (Text or Null)</td>
+                	</tr>
+                	<tr>
+                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Optional parameter.
+                		    Will be triggered when the window.prompt() function was called.
+                		    Receive the text of window.prompt() and default value as a parameters.
+                		</td>
+                	</tr>
+                </table>
             </section>
 
             <section>
