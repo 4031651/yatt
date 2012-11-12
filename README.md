@@ -17,12 +17,12 @@ a script which contains your test. Done!
 + Assertions statements
 + Asynchronous tests
 + Suites of a tests
-+ Add alert/confirm/prompt interaction
++ Alert/confirm/prompt interaction
 + Mock for socket.io (partial implementation)
-+ emulation of user interaction (eemul)
++ Emulation of user interaction (eemul)
 
 ###Future releases
-+ Refactor the loger
++ Refactor the logger
 + Timeout for tests
 + Full implementation of the socket.io mock
 + Mock/Hooking of the jQuery.ajax
