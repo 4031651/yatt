@@ -34,6 +34,21 @@
                 <li><a href="#yatt_confirm"> confirm </a></li>
                 <li><a href="#yatt_prompt"> prompt </a></li>
                 <li><a href="#yatt_startTests"> startTests </a></li>
+                <li><a href="#yatt_createLogger"> createLogger </a></li>
+                <li><a href="#yatt_setLogger"> setLogger </a></li>
+                <li>
+                    <a href="#yatt_logger" class="toc_title"> logger class </a>
+                    <ul class="toc_section">
+                        <li><a href="#yatt_logger_init"> init </a></li>
+                        <li><a href="#yatt_logger_ready"> ready </a></li>
+                        <li><a href="#yatt_logger_start"> start </a></li>
+                        <li><a href="#yatt_logger_test"> test </a></li>
+                        <li><a href="#yatt_logger_pass"> pass </a></li>
+                        <li><a href="#yatt_logger_fail"> fail </a></li>
+                        <li><a href="#yatt_logger_message"> message </a></li>
+                        <li><a href="#yatt_logger_end"> end </a></li>
+                    </ul>
+                </li>
             </ul>
 
             <h3> Mocks </h3>
@@ -52,13 +67,13 @@
                 <li>
                     <a href="#io_server" class="toc_title"> server </a>
                     <ul class="toc_section">
-                    	<li><a href="#io_server_on"> on </a></li>
-                    	<li><a href="#io_server_once"> once </a></li>
-                    	<li><a href="#io_server_emit"> emit </a></li>
+                        <li><a href="#io_server_on"> on </a></li>
+                        <li><a href="#io_server_once"> once </a></li>
+                        <li><a href="#io_server_emit"> emit </a></li>
                     </ul>
                 </li>
             </ul>
-            
+            <div style="padding-bottom: 30px"> </div>
         </div>
         <div id="content">
             <p>
@@ -66,7 +81,7 @@
                 Licensed under the MIT license.<br/>
                 Use code from https://github.com/joyent/node/blob/master/lib/assert.js<br/>
                 <span class="author">Author: Sergey Tsapenko &lt;4031651@gmail.com&gt;</span><br/>
-                <span class="version">Version: 0.1</span><br/>
+                <span class="version">Version: 0.2.1</span><br/>
             </p>
 
             <a name="assert"><!-- --></a>
@@ -82,12 +97,12 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">value</td><td class="p-type">Mixed</td><td class="p-text">Tested value</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">value</td><td class="p-type">Mixed</td><td class="p-text">Tested value</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -101,15 +116,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -123,15 +138,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -145,15 +160,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -167,15 +182,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -189,15 +204,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -211,15 +226,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">Mixed</td><td class="p-text"><!-- --></td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Message if the assertion failed</td>
+                    </tr>
                 </table>
             </section>
 
@@ -233,15 +248,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">block</td><td class="p-type">Function</td><td class="p-text">Tested code</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">error</td><td class="p-type">Exception</td><td class="p-text">Optional argument. Exception type</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Optional argument. Exception message</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">block</td><td class="p-type">Function</td><td class="p-text">Tested code</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">error</td><td class="p-type">Exception</td><td class="p-text">Optional argument. Exception type</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Optional argument. Exception message</td>
+                    </tr>
                 </table>
             </section>
 
@@ -255,15 +270,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">block</td><td class="p-type">Function</td><td class="p-text">Tested code</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">error</td><td class="p-type">Exception</td><td class="p-text">Optional argument. Exception type</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Optional argument. Exception message</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">block</td><td class="p-type">Function</td><td class="p-text">Tested code</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">error</td><td class="p-type">Exception</td><td class="p-text">Optional argument. Exception type</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Optional argument. Exception message</td>
+                    </tr>
                 </table>
             </section>
 
@@ -276,16 +291,16 @@
                     <b>wait</b><code>yatt.wait(time, fn)</code>
                 </div>
                 <div class="description">
-                    Wrapper function around window.setTimeout. Reserved for future use.
+                    Wrapper function around window.setTimeout. All waits are properly cleared at the end of the test.
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">time</td><td class="p-type">Number</td><td class="p-text">Time to wait in milliseconds</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">time</td><td class="p-type">Number</td><td class="p-text">Time to wait in milliseconds</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function</td>
+                    </tr>
                 </table>
             </section>
 
@@ -309,9 +324,9 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Error message</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Error message</td>
+                    </tr>
                 </table>
             </section>
 
@@ -325,9 +340,9 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">msg</td><td class="p-type">String</td><td class="p-text">Error message</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">msg</td><td class="p-type">String</td><td class="p-text">Error message</td>
+                    </tr>
                 </table>
             </section>
 
@@ -341,12 +356,12 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of test</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Test suite</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of test</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Test suite</td>
+                    </tr>
                 </table>
                 Return<br/>
                 <span class="p-type">yatt</span>
@@ -363,12 +378,12 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">suiteName</td><td class="p-type">String</td><td class="p-text">Name of suite</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">suiteName</td><td class="p-type">String</td><td class="p-text">Name of suite</td>
+                    </tr>
                 </table>
                 Return<br/>
-                <span class="p-type">suite</span>
+                <span class="p-type">Suite</span>
                 <span class="p-text">Suite object. This object has one method test()</span>
             </section>
 
@@ -382,12 +397,12 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function.
-                		    Will be triggered when the window.alert() function was called.
-                		    Receive the text of window.alert() as a parameter.
-                		</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function.
+                            Will be triggered when the window.alert() function was called.
+                            Receive the text of window.alert() as a parameter.
+                        </td>
+                    </tr>
                 </table>
             </section>
 
@@ -401,15 +416,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">result</td><td class="p-type">Boolean</td><td class="p-text">Result of confirm</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Optional parameter.
-                		    Will be triggered when the window.confirm() function was called.
-                		    Receive the text of window.confirm() as a parameter.
-                		</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">result</td><td class="p-type">Boolean</td><td class="p-text">Result of confirm</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Optional parameter.
+                            Will be triggered when the window.confirm() function was called.
+                            Receive the text of window.confirm() as a parameter.
+                        </td>
+                    </tr>
                 </table>
             </section>
 
@@ -423,15 +438,15 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">result</td><td class="p-type">Mixed</td><td class="p-text">Result of prompt (Text or Null)</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Optional parameter.
-                		    Will be triggered when the window.prompt() function was called.
-                		    Receive the text of window.prompt() and default value as a parameters.
-                		</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">result</td><td class="p-type">Mixed</td><td class="p-text">Result of prompt (Text or Null)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Optional parameter.
+                            Will be triggered when the window.prompt() function was called.
+                            Receive the text of window.prompt() and default value as a parameters.
+                        </td>
+                    </tr>
                 </table>
             </section>
 
@@ -445,11 +460,220 @@
                 </div>
             </section>
 
+            <section>
+                <a name="yatt_createLogger"><!-- --></a>
+                <div class="synopsis">
+                    <b>createLogger</b><code>yatt.createLogger(properties)</code>
+                </div>
+                <div class="description">
+                    Create YATT Logger class.<br />
+                    Extends default logger class with given properties. Method init() will be called first if it will be defined in the given properties object.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">properties</td><td class="p-type">Object</td><td class="p-text">Properties which will be extend logger</td>
+                    </tr>
+                </table>
+                Return<br/>
+                <span class="p-type">Logger</span>
+                <span class="p-text">YATT Logger class</span>
+            </section>
+
+            <section>
+                <a name="yatt_setLogger"><!-- --></a>
+                <div class="synopsis">
+                    <b>setLogger</b><code>yatt.setLogger(logger)</code>
+                </div>
+                <div class="description">
+                    Set the logger.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">logger</td><td class="p-type">Logger</td><td class="p-text">Instanse of YATT Logger class</td>
+                    </tr>
+                </table>
+            </section>
+
+            <a name="yatt_logger"><!-- --></a>
+            <h4> logger class </h4>
+
+            <section>
+                <a name="yatt_logger_init"><!-- --></a>
+                <div class="synopsis">
+                    <b>init</b><code>init()</code>
+                </div>
+                <div class="description">
+                     Method init() will be called first if was defined. Used to setup the logger.
+                </div>
+            </section>
+
+            <section>
+                <a name="yatt_logger_ready"><!-- --></a>
+                <div class="synopsis">
+                    <b>ready</b><code>ready(callback)</code>
+                </div>
+                <div class="description">
+                    Called by yatt.startTests(). Should invoke the callback function to start the tests. Can used to setup the logger.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">callback</td><td class="p-type">Function</td><td class="p-text"><!-- --></td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logger_start"><!-- --></a>
+                <div class="synopsis">
+                    <b>start</b><code>start(count)</code>
+                </div>
+                <div class="description">
+                    Called when all of the tests was started.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">count</td><td class="p-type">Number</td><td class="p-text">The number of all tests</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logger_test"><!-- --></a>
+                <div class="synopsis">
+                    <b>test</b><code>test(idx, count, name, suite)</code>
+                </div>
+                <div class="description">
+                    Called when the test was started.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">idx</td><td class="p-type">Number</td><td class="p-text">The index of the current test.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">count</td><td class="p-type">Number</td><td class="p-text">The number of all tests</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of the current test</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">suite</td><td class="p-type">String</td><td class="p-text">Name of the tests suite. Can be an empty string</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logger_pass"><!-- --></a>
+                <div class="synopsis">
+                    <b>pass</b><code>pass(idx, name, suite)</code>
+                </div>
+                <div class="description">
+                    Called when the test was passed.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">idx</td><td class="p-type">Number</td><td class="p-text">The index of the current test.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of the current test</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">suite</td><td class="p-type">String</td><td class="p-text">Name of the tests suite. Can be an empty string</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logger_fail"><!-- --></a>
+                <div class="synopsis">
+                    <b>fail</b><code>fail(idx, name, suite, actual, expected, message, operator)</code>
+                </div>
+                <div class="description">
+                    Called when the test was failed.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">idx</td><td class="p-type">Number</td><td class="p-text">The index of the current test.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of the current test</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">suite</td><td class="p-type">String</td><td class="p-text">Name of the tests suite. Can be an empty string</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">actual</td><td class="p-type">String</td><td class="p-text">Actual value of assertion</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">expected</td><td class="p-type">String</td><td class="p-text">Expected value of assertion</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">message</td><td class="p-type">String</td><td class="p-text">Error message</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">operator</td><td class="p-type">String</td><td class="p-text">Assertion operator</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logger_message"><!-- --></a>
+                <div class="synopsis">
+                    <b>message</b><code>message(idx, name, suite, msg[, color[, cls]])</code>
+                </div>
+                <div class="description">
+                    Called when by yatt.logMsg().
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">idx</td><td class="p-type">Number</td><td class="p-text">The index of the current test.</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Name of the current test</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">suite</td><td class="p-type">String</td><td class="p-text">Name of the tests suite. Can be an empty string</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">msg</td><td class="p-type">String</td><td class="p-text">Message to log</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">color</td><td class="p-type">String</td><td class="p-text">Optional argument. Color of the message</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">cls</td><td class="p-type">String</td><td class="p-text">Optional argument. CSS class of the message</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_logger_end"><!-- --></a>
+                <div class="synopsis">
+                    <b>end</b><code>end(count)</code>
+                </div>
+                <div class="description">
+                    Called when all of the tests was ended.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">count</td><td class="p-type">Number</td><td class="p-text">The number of all tests</td>
+                    </tr>
+                </table>
+            </section>
+
             <h2> Mocks </h2>
 
             <a name="io"><!-- --></a>
             <h3> socket.io </h3>
-            
+
             <p>
                 Socket.io Mock<br/>
                 Licensed under the MIT license.<br/>
@@ -468,16 +692,16 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">url</td><td class="p-type">String</td><td class="p-text">String that describe the URL.
-                		    Any string. In fact this string no used. Just for compatibility with Socket.io connect()</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">url</td><td class="p-type">String</td><td class="p-text">String that describe the URL.
+                            Any string. In fact this string no used. Just for compatibility with Socket.io connect()</td>
+                    </tr>
                 </table>
                 Return<br/>
                 <span class="p-type">Socket</span>
                 <span class="p-text">Socket.io Socket object</span>
             </section>
-            
+
             <a name="io_socket"><!-- --></a>
             <h4> socket </h4>
 
@@ -491,12 +715,12 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Called when event was triggered</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">fn</td><td class="p-type">Function</td><td class="p-text">Callback function. Called when event was triggered</td>
+                    </tr>
                 </table>
             </section>
 
@@ -510,12 +734,12 @@
                 </div>
                 Parameters
                 <table class="params">
-                	<tr>
-                		<td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
-                	</tr>
-                	<tr>
-                		<td class="p-name">data</td><td class="p-type">Mixed</td><td class="p-text">Event data</td>
-                	</tr>
+                    <tr>
+                        <td class="p-name">name</td><td class="p-type">String</td><td class="p-text">Event name</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">data</td><td class="p-type">Mixed</td><td class="p-text">Event data</td>
+                    </tr>
                 </table>
             </section>
 

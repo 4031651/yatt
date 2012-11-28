@@ -26,6 +26,7 @@ function fitTopage() {
     jQuery('#test_results').height(jQuery(window).height());
 };
 jQuery(function () {
+    window.opener.yatt.logger.onReady();
     fitTopage();
     jQuery(window).resize(fitTopage);
 });

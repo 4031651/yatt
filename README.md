@@ -18,13 +18,12 @@ a script which contains your test. Done!
 + Asynchronous tests
 + Suites of a tests
 + Alert/confirm/prompt interaction
-+ Mock for socket.io (partial implementation)
++ Custom tests logging (see [logger class](api/index.html#yatt_logger_init))
++ Mock for socket.io
 + Emulation of user interaction (eemul)
 
 ###Future releases
-+ Refactor the logger
 + Timeout for tests
-+ Full implementation of the socket.io mock
 + Mock/Hooking of the jQuery.ajax
 + Extensions for the  browsers
 + Mock/Hooking of the XHR object 
