@@ -18,7 +18,7 @@ a script which contains your test. Done!
 + Asynchronous tests
 + Suites of a tests
 + Alert/confirm/prompt interaction
-+ Custom tests logging (see [logger class](api/index.html#yatt_logger_init))
++ Custom tests logging (see [logger class](http://4031651.github.com/yatt/api/index.html#yatt_logger_init))
 + Mock for socket.io
 + Emulation of user interaction (eemul)
 
