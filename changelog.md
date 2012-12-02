@@ -6,4 +6,4 @@
 + Refactor the logger
 
 ### 0.2.2
-+ Remove jQuery code frob yatt.js
++ Remove jQuery code from yatt.js
