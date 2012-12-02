@@ -1,7 +1,7 @@
 YATT - Yet another testing tool.
 ===================
 YATT is a powerful, easy-to-use JavaScript functional festing framework.<br />
-version 0.2
+version 0.2.2
 
 ###Usage
 To use yatt you should create a test page. This page is not very different from the page of your application.

@@ -1,4 +1,8 @@
 /*global yatt, assert*/
+
+// Add a button that runs the tests.
+yatt.setStartButton('Start tests', 'yatt_start');
+
 yatt.test('Test w/o suite', function () {
     yatt.pass();
 });

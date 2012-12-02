@@ -9,6 +9,7 @@
     </head>
     <body>
         <div id="sidebar">
+            <a href="#summary" class="toc_title"> summary </a>
             <a href="#assert" class="toc_title"> assert </a>
             <ul class="toc_section">
                 <li><a href="#assert_ok"> ok </a></li>
@@ -34,6 +35,8 @@
                 <li><a href="#yatt_confirm"> confirm </a></li>
                 <li><a href="#yatt_prompt"> prompt </a></li>
                 <li><a href="#yatt_startTests"> startTests </a></li>
+                <li><a href="#yatt_DOMReady"> DOMReady </a></li>
+                <li><a href="#yatt_setStartButton"> setStartButton </a></li>
                 <li><a href="#yatt_createLogger"> createLogger </a></li>
                 <li><a href="#yatt_setLogger"> setLogger </a></li>
                 <li>
@@ -76,12 +79,13 @@
             <div style="padding-bottom: 30px"> </div>
         </div>
         <div id="content">
+            <a name="summary"><!-- --></a>
             <p>
                 A JavaScript Functional Testing framework.<br/>
                 Licensed under the MIT license.<br/>
                 Use code from https://github.com/joyent/node/blob/master/lib/assert.js<br/>
                 <span class="author">Author: Sergey Tsapenko &lt;4031651@gmail.com&gt;</span><br/>
-                <span class="version">Version: 0.2.1</span><br/>
+                <span class="version">Version: 0.2.2</span><br/>
             </p>
 
             <a name="assert"><!-- --></a>
@@ -458,6 +462,45 @@
                 <div class="description">
                     Start all tests.
                 </div>
+            </section>
+
+            <section>
+                <a name="yatt_DOMReady"><!-- --></a>
+                <div class="synopsis">
+                    <b>DOMReady</b><code>yatt.DOMReady(callback)</code>
+                </div>
+                <div class="description">
+                    Specify a function to execute when the DOM is loaded.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">callback</td><td class="p-type">Function</td><td class="p-text">A function to execute after the DOM is ready</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <a name="yatt_setStartButton"><!-- --></a>
+                <div class="synopsis">
+                    <b>setStartButton</b><code>yatt.setStartButton(text[, id[, cls]])</code>
+                </div>
+                <div class="description">
+                    Add a button that runs the tests.<br />
+                    Appends a tag "A" to the body after the DOM is loaded.
+                </div>
+                Parameters
+                <table class="params">
+                    <tr>
+                        <td class="p-name">text</td><td class="p-type">Strind</td><td class="p-text">Button label</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">id</td><td class="p-type">Strind</td><td class="p-text">Optional parameter. Value of "id" attribute</td>
+                    </tr>
+                    <tr>
+                        <td class="p-name">cls</td><td class="p-type">Strind</td><td class="p-text">Optional parameter. Value of "class" attribute</td>
+                    </tr>
+                </table>
             </section>
 
             <section>

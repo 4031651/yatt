@@ -30,14 +30,14 @@ yatt.suite('dialogs')
     yatt.prompt('text', function (text, val) {
         assert.equal(text, 'test prompt');
         assert.equal(val, 'prompt');
-        yatt.logMsg('Confirm: Sey Ok');
+        yatt.logMsg('Prompt: Sey Ok');
     });
     var res = prompt('test prompt', 'prompt');
     assert.equal(res, 'text');
 
     yatt.prompt(null, function (text) {
         assert.equal(text, 'test prompt');
-        yatt.logMsg('Confirm: Sey Cancel');
+        yatt.logMsg('Prompt: Sey Cancel');
     });
     var res = prompt('test prompt');
     assert.strictEqual(res, null);
